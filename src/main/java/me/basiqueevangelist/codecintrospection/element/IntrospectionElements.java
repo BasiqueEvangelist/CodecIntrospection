@@ -1,13 +1,18 @@
 package me.basiqueevangelist.codecintrospection.element;
 
 import me.basiqueevangelist.codecintrospection.CodecIntrospection;
+import me.basiqueevangelist.codecintrospection.element.codec.dfu.*;
+import me.basiqueevangelist.codecintrospection.element.codec.minecraft.RegistryElementElement;
+import me.basiqueevangelist.codecintrospection.element.codec.minecraft.RegistryEntryListElement;
+import me.basiqueevangelist.codecintrospection.element.codec.minecraft.StringIdentifiableEnumElement;
+import me.basiqueevangelist.codecintrospection.element.mapcodec.dfu.*;
 import org.jetbrains.annotations.ApiStatus;
 
 @ApiStatus.Internal
 public class IntrospectionElements {
     public static void init() {
         //region DFU
-        for (PrimitiveElement element : PrimitiveElement.values()) {
+        for (PrimitiveCodecElement element : PrimitiveCodecElement.values()) {
             CodecIntrospection.registerStatic(element);
         }
 

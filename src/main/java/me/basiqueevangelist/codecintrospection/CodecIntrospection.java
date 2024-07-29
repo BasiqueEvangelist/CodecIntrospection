@@ -3,8 +3,13 @@ package me.basiqueevangelist.codecintrospection;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import me.basiqueevangelist.codecintrospection.element.*;
-import me.basiqueevangelist.codecintrospection.mixin.dfu.codec.RecursiveCodecAccessor;
-import me.basiqueevangelist.codecintrospection.mixin.dfu.codec.WithLifecycleCodecAccessor;
+import me.basiqueevangelist.codecintrospection.element.codec.CodecIntrospectionElement;
+import me.basiqueevangelist.codecintrospection.element.codec.UnknownCodecElement;
+import me.basiqueevangelist.codecintrospection.element.mapcodec.MapCodecIntrospectionElement;
+import me.basiqueevangelist.codecintrospection.element.mapcodec.UnknownMapCodecElement;
+import me.basiqueevangelist.codecintrospection.mixin.codec.dfu.RecursiveCodecAccessor;
+import me.basiqueevangelist.codecintrospection.mixin.codec.dfu.WithLifecycleCodecAccessor;
+import me.basiqueevangelist.codecintrospection.mixin.mapcodec.dfu.AssumeMapUnsafeMapCodecAccessor;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -66,6 +71,9 @@ public final class CodecIntrospection {
         var staticElement = MAP_CODEC_TO_ELEMENT.get(codec);
 
         if (staticElement != null) return staticElement;
+
+        if (codec instanceof AssumeMapUnsafeMapCodecAccessor assumeMapUnsafe)
+            return introspect(assumeMapUnsafe.getVal$codec());
 
         for (var converter : MAP_CODEC_CONVERTERS) {
             var res = converter.apply(codec);
