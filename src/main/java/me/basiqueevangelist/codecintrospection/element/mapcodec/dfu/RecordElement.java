@@ -5,7 +5,7 @@ package me.basiqueevangelist.codecintrospection.element.mapcodec.dfu;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.MapDecoder;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import me.basiqueevangelist.codecintrospection.CodecIntrospection;
+import me.basiqueevangelist.codecintrospection.MapCodecIntrospection;
 import me.basiqueevangelist.codecintrospection.element.IntrospectionElement;
 import me.basiqueevangelist.codecintrospection.element.mapcodec.MapCodecIntrospectionElement;
 import me.basiqueevangelist.codecintrospection.mixin.mapcodec.dfu.xmap.MappedMapDecoderAccessor;
@@ -54,7 +54,7 @@ public record RecordElement(MapCodec<?> original, List<IntrospectionElement> fie
                 traverseBuilder(apply3.getVal$f3(), fields);
                 traverseBuilder(apply3.getVal$f4(), fields);
             }
-            case MapCodec<?> codec -> fields.add(CodecIntrospection.introspect(codec));
+            case MapCodec<?> codec -> fields.add(MapCodecIntrospection.introspect(codec));
             case MappedMapDecoderAccessor mapped -> traverseDecoder(mapped.getThis$0(), fields);
             case UnitMapDecoderAccessor unit -> {}
             case null, default -> System.out.println(decoder);

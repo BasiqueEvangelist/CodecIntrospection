@@ -1,7 +1,7 @@
 package me.basiqueevangelist.codecintrospection.element.mapcodec.dfu;
 
 import com.mojang.serialization.MapCodec;
-import me.basiqueevangelist.codecintrospection.CodecIntrospection;
+import me.basiqueevangelist.codecintrospection.MapCodecIntrospection;
 import me.basiqueevangelist.codecintrospection.element.IntrospectionElement;
 import me.basiqueevangelist.codecintrospection.element.mapcodec.MapCodecIntrospectionElement;
 import me.basiqueevangelist.codecintrospection.mixin.mapcodec.dfu.MapResultMapCodecAccessor;
@@ -19,6 +19,6 @@ public record MapResultMapCodecElement(MapCodec<?> original, IntrospectionElemen
     public static IntrospectionElement fromMapCodec(MapCodec<?> codec) {
         if (!(codec instanceof MapResultMapCodecAccessor mapResult)) return null;
 
-        return new MapResultMapCodecElement(codec, CodecIntrospection.introspect(mapResult.getThis$0()));
+        return new MapResultMapCodecElement(codec, MapCodecIntrospection.introspect(mapResult.getThis$0()));
     }
 }

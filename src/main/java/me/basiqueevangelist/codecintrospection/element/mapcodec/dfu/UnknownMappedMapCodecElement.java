@@ -2,7 +2,7 @@ package me.basiqueevangelist.codecintrospection.element.mapcodec.dfu;
 
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.MapCodec;
-import me.basiqueevangelist.codecintrospection.CodecIntrospection;
+import me.basiqueevangelist.codecintrospection.MapCodecIntrospection;
 import me.basiqueevangelist.codecintrospection.element.IntrospectionElement;
 import me.basiqueevangelist.codecintrospection.element.MappedElement;
 import me.basiqueevangelist.codecintrospection.element.mapcodec.MapCodecIntrospectionElement;
@@ -66,7 +66,7 @@ public record UnknownMappedMapCodecElement(MapCodec<?> original, IntrospectionEl
             }
         }
         
-        return new UnknownMappedMapCodecElement(codec, CodecIntrospection.introspect(source), to, from);
+        return new UnknownMappedMapCodecElement(codec, MapCodecIntrospection.introspect(source), to, from);
     }
 
     @Override
