@@ -9,9 +9,9 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Function;
 
-public record MappedMapElement(MapCodec<?> original, IntrospectionElement source, Function<?, DataResult<?>> to, Function<?, DataResult<?>> from) implements MapCodecIntrospectionElement {
+public record UnknownMappedMapCodecElement(MapCodec<?> original, IntrospectionElement source, Function<?, DataResult<?>> to, Function<?, DataResult<?>> from) implements MappedElement, MapCodecIntrospectionElement {
     @SuppressWarnings("unchecked")
-    static @Nullable MappedMapElement fromMapCodec(MapCodec<?> codec) {
+    static @Nullable UnknownMappedMapCodecElement fromMapCodec(MapCodec<?> codec) {
         if (!(codec instanceof CombinedMapCodecAccessor combined)) return null;
 
         Function<?, DataResult<?>> to;
@@ -57,13 +57,13 @@ public record MappedMapElement(MapCodec<?> original, IntrospectionElement source
             }
         }
         
-        return new MappedMapElement(codec, CodecIntrospection.introspect(source), to, from);
+        return new UnknownMappedMapCodecElement(codec, CodecIntrospection.introspect(source), to, from);
     }
 
     @Override
     public void dump(FormattedDumper out, int indent) {
-//        out.write(indent, "MappedMapElement (" + to + ", " + from + ")");
-        out.write(indent, "MappedMapElement");
+//        out.write(indent, "UnknownMappedMapCodecElement (" + to + ", " + from + ")");
+        out.write(indent, "UnknownMappedMapCodecElement");
         source.dump(out, indent + 1);
     }
 }

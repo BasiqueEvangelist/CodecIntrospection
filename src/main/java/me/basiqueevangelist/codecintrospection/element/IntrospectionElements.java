@@ -1,6 +1,5 @@
 package me.basiqueevangelist.codecintrospection.element;
 
-import com.mojang.serialization.codecs.ListCodec;
 import me.basiqueevangelist.codecintrospection.CodecIntrospection;
 import org.jetbrains.annotations.ApiStatus;
 
@@ -18,7 +17,7 @@ public class IntrospectionElements {
         CodecIntrospection.registerCodecConverter(PromotePartialCodecElement::fromCodec);
         CodecIntrospection.registerCodecConverter(ListCodecElement::fromCodec);
 
-        CodecIntrospection.registerMapCodecConverter(MappedMapElement::fromMapCodec);
+        CodecIntrospection.registerMapCodecConverter(UnknownMappedMapCodecElement::fromMapCodec);
         CodecIntrospection.registerMapCodecConverter(RecordElement::fromMapCodec);
         CodecIntrospection.registerMapCodecConverter(FieldElement::fromMapCodec);
         CodecIntrospection.registerMapCodecConverter(OptionalFieldElement::fromMapCodec);
