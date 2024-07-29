@@ -1,0 +1,29 @@
+{
+	"schemaVersion": 1,
+	"id": "codec-introspection-testmod",
+	"version": "0.0.0",
+	"name": "Codec Introspection Testmod",
+	"description": "A library for introspecting codecs and friends",
+	"authors": [
+		"BasiqueEvangelist"
+	],
+	"contributors": [
+		"haykam821 (original author of Caricodec)"
+	],
+	"contact": {
+		"sources": "https://github.com/BasiqueEvangelist/CodecIntrospection"
+	},
+	"license": "MPL-2.0",
+	"environment": "*",
+	"entrypoints": {
+		"preLaunch": [
+			"me.basiqueevangelist.codecintrospection.testmod.CodecIntrospectionTestmod"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

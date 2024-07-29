@@ -1,0 +1,38 @@
+{
+    "required": true,
+    "package": "me.basiqueevangelist.codecintrospection.mixin",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [
+        "KeyDispatchCodecAccessor",
+        "dfu.codec.ComappedEncoderAccessor",
+        "dfu.codec.CombinedCodecAccessor",
+        "dfu.codec.FlatComappedEncoderAccessor",
+        "dfu.codec.FlatMappedDecoderAccessor",
+        "dfu.codec.MappedDecoderAccessor",
+        "dfu.codec.MapResultCodecAccessor",
+        "dfu.codec.PromotePartialDecoderAccessor",
+        "dfu.codec.RecursiveCodecAccessor",
+        "dfu.codec.WithLifecycleCodecAccessor",
+        "dfu.mapcodec.ComappedMapEncoderAccessor",
+        "dfu.mapcodec.CombinedMapCodecAccessor",
+        "dfu.mapcodec.FieldDecoderAccessor",
+        "dfu.mapcodec.FieldEncoderAccessor",
+        "dfu.mapcodec.FlatComappedMapEncoderAccessor",
+        "dfu.mapcodec.FlatMappedMapDecoderAccessor",
+        "dfu.mapcodec.MappedMapDecoderAccessor",
+        "dfu.mapcodec.MapResultMapCodecAccessor",
+        "dfu.mapcodec.OptionalFieldCodecAccessor",
+        "dfu.mapcodec.UnitMapDecoderAccessor",
+        "dfu.record.Apply2DecoderAccessor",
+        "dfu.record.Apply3DecoderAccessor",
+        "dfu.record.Apply4DecoderAccessor",
+        "dfu.record.RecordCodecBuilderAccessor",
+        "dfu.record.RecordMapCodecAccessor",
+        "minecraft.RegistryElementCodecAccessor",
+        "minecraft.RegistryEntryListCodecAccessor",
+        "minecraft.StringIdentifiableBasicCodecMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+	}
+}

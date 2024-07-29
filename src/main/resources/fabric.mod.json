@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "codec-introspection",
+	"version": "${version}",
+	"name": "Codec Introspection",
+	"description": "A library for introspecting codecs and friends",
+	"authors": [
+		"BasiqueEvangelist"
+	],
+	"contributors": [
+		"haykam821 (original author of Caricodec)"
+	],
+	"contact": {
+		"sources": "https://github.com/BasiqueEvangelist/CodecIntrospection"
+	},
+	"license": "MPL-2.0",
+	"icon": "assets/codec-introspection/icon.png",
+	"environment": "*",
+	"mixins": [
+		"codec-introspection.mixins.json"
+	],
+	"custom": {
+		"modmenu": {
+			"badges": [
+				"library"
+			]
+		}
+	},
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
