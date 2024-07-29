@@ -3,9 +3,9 @@ package me.basiqueevangelist.codecintrospection.element;
 import me.basiqueevangelist.codecintrospection.CodecIntrospection;
 import me.basiqueevangelist.codecintrospection.MapCodecIntrospection;
 import me.basiqueevangelist.codecintrospection.element.codec.dfu.*;
-import me.basiqueevangelist.codecintrospection.element.codec.minecraft.RegistryElementElement;
-import me.basiqueevangelist.codecintrospection.element.codec.minecraft.RegistryEntryListElement;
-import me.basiqueevangelist.codecintrospection.element.codec.minecraft.StringIdentifiableEnumElement;
+import me.basiqueevangelist.codecintrospection.element.codec.minecraft.RegistryFileElement;
+import me.basiqueevangelist.codecintrospection.element.codec.minecraft.HolderSetElement;
+import me.basiqueevangelist.codecintrospection.element.codec.minecraft.StringRepresentableEnumElement;
 import me.basiqueevangelist.codecintrospection.element.mapcodec.dfu.*;
 import org.jetbrains.annotations.ApiStatus;
 
@@ -38,9 +38,9 @@ public class IntrospectionElements {
         //endregion
 
         //region Minecraft
-        CodecIntrospection.registerConverter(RegistryElementElement::fromCodec);
-        CodecIntrospection.registerConverter(RegistryEntryListElement::fromCodec);
-        CodecIntrospection.registerConverter(StringIdentifiableEnumElement::fromCodec);
+        CodecIntrospection.registerConverter(RegistryFileElement::fromCodec);
+        CodecIntrospection.registerConverter(HolderSetElement::fromCodec);
+        CodecIntrospection.registerConverter(StringRepresentableEnumElement::fromCodec);
         //endregion
     }
 }
