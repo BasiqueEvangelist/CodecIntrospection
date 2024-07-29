@@ -7,6 +7,7 @@ import me.basiqueevangelist.codecintrospection.element.codec.CodecIntrospectionE
 import me.basiqueevangelist.codecintrospection.element.codec.UnknownCodecElement;
 import me.basiqueevangelist.codecintrospection.mixin.codec.dfu.RecursiveCodecAccessor;
 import me.basiqueevangelist.codecintrospection.mixin.codec.dfu.WithLifecycleCodecAccessor;
+import me.basiqueevangelist.codecintrospection.mixin.codec.minecraft.EncoderCacheCodecAccessor;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -45,6 +46,9 @@ public final class CodecIntrospection {
 
         if (codec instanceof MapCodec.MapCodecCodec<?> mapCodecCodec)
             return MapCodecIntrospection.introspect(mapCodecCodec.codec());
+
+        if (codec instanceof EncoderCacheCodecAccessor encoderCacheCodec)
+            return introspect(encoderCacheCodec.getVal$codec());
 
         for (var converter : CONVERTERS) {
             var res = converter.apply(codec);

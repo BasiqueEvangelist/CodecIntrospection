@@ -56,7 +56,8 @@ public record RecordElement(MapCodec<?> original, List<IntrospectionElement> fie
             }
             case MapCodec<?> codec -> fields.add(MapCodecIntrospection.introspect(codec));
             case MappedMapDecoderAccessor mapped -> traverseDecoder(mapped.getThis$0(), fields);
-            case UnitMapDecoderAccessor unit -> {}
+            case LiftDecoderAccessor lift -> traverseBuilder(lift.getVal$a(), fields);
+            case UnitMapDecoderAccessor ignored -> {}
             case null, default -> System.out.println(decoder);
         }
     }
