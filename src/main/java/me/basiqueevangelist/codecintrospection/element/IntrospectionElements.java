@@ -35,6 +35,7 @@ public class IntrospectionElements {
         MapCodecIntrospection.registerConverter(MapResultMapCodecElement::fromMapCodec);
         MapCodecIntrospection.registerConverter(SimpleMapElement::fromMapCodec);
         MapCodecIntrospection.registerConverter(KeyDispatchElement::fromMapCodec);
+        MapCodecIntrospection.registerConverter(UnitElement::fromMapCodec);
         //endregion
 
         //region Minecraft

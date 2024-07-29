@@ -18,6 +18,7 @@
         "codec.minecraft.StringRepresentableCodecMixin",
         "mapcodec.dfu.AssumeMapUnsafeMapCodecAccessor",
         "mapcodec.dfu.CombinedMapCodecAccessor",
+        "mapcodec.dfu.EmptyMapEncoderAccessor",
         "mapcodec.dfu.FieldDecoderAccessor",
         "mapcodec.dfu.FieldEncoderAccessor",
         "mapcodec.dfu.KeyDispatchCodecAccessor",
