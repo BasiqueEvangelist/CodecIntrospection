@@ -2,11 +2,10 @@ package me.basiqueevangelist.codecintrospection.testmod;
 
 import com.mojang.serialization.Codec;
 import me.basiqueevangelist.codecintrospection.CodecIntrospection;
-import me.basiqueevangelist.codecintrospection.util.FormattedDumper;
-import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
 import net.minecraft.Bootstrap;
 import net.minecraft.SharedConstants;
+import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.Biome;
@@ -24,6 +23,7 @@ public class CodecIntrospectionTestmod implements PreLaunchEntrypoint {
         demo("ItemStack.CODEC", ItemStack.CODEC);
         demo("Biome.CODEC", Biome.CODEC);
         demo("BiomeEffects.CODEC", BiomeEffects.CODEC);
+        demo("ItemEnchantmentsComponent.CODEC", ItemEnchantmentsComponent.CODEC);
 
         System.exit(0);
     }

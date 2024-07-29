@@ -26,6 +26,7 @@ public class IntrospectionElements {
         CodecIntrospection.registerConverter(UnboundedMapElement::fromCodec);
         CodecIntrospection.registerConverter(PromotePartialCodecElement::fromCodec);
         CodecIntrospection.registerConverter(ListCodecElement::fromCodec);
+        CodecIntrospection.registerConverter(EitherCodecElement::fromCodec);
 
         MapCodecIntrospection.registerConverter(UnknownMappedMapCodecElement::fromMapCodec);
         MapCodecIntrospection.registerConverter(RecordElement::fromMapCodec);
